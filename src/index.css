@@ -1,0 +1,40 @@
+:root {
+  --bg: #efe3b4;
+  --paper: #fffdf2;
+  --orange: #f05720;
+  --green: #0d6c61;
+  --ink: #17120a;
+  --muted: #75684c;
+  font-family: Tahoma, 'Segoe UI', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 249, 212, 0.72), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(255, 244, 184, 0.52), transparent 30%),
+    var(--bg);
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--orange);
+  color: #fff;
+}

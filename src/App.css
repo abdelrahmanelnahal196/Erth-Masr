@@ -1,0 +1,613 @@
+main {
+  overflow: hidden;
+}
+
+.site-header {
+  position: sticky;
+  top: 28px;
+  z-index: 10;
+  width: min(1180px, calc(100% - 40px));
+  height: 58px;
+  margin: 28px auto 0;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  border-radius: 12px;
+  background: rgba(255, 253, 242, 0.9);
+  box-shadow: 0 14px 40px rgba(91, 76, 36, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.stamp,
+.brand {
+  color: var(--orange);
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.stamp {
+  text-decoration: none;
+  font-size: 18px;
+  transform: rotate(-4deg);
+}
+
+.stamp span,
+.brand strong {
+  display: block;
+  font-size: 11px;
+}
+
+.brand {
+  display: grid;
+  place-items: end;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 46px);
+}
+
+.site-header a {
+  color: var(--orange);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 220ms ease, transform 220ms ease;
+}
+
+.site-header nav a:hover {
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.hero-section,
+.about-section,
+.program-section,
+.reviews-section,
+.booking-section,
+.contact-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: clamp(28px, 6vw, 80px);
+  padding: clamp(70px, 9vw, 125px) 0 95px;
+}
+
+.hero-art {
+  position: relative;
+}
+
+.hero-art img {
+  width: min(650px, 100%);
+  display: block;
+  filter: drop-shadow(0 26px 28px rgba(83, 70, 45, 0.2));
+  animation: floatHero 5s ease-in-out infinite;
+}
+
+.sun-glow {
+  position: absolute;
+  inset: auto 42% 20% auto;
+  width: 86px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 248, 219, 0.95);
+  box-shadow: 0 0 42px 18px rgba(255, 255, 255, 0.8);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.hero-copy {
+  text-align: right;
+}
+
+.eyebrow,
+.section-heading p,
+.booking-form > p {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+h1 {
+  max-width: 520px;
+  margin: 8px 0 12px;
+  color: #050505;
+  font-size: clamp(58px, 8vw, 124px);
+  line-height: 0.82;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin: 0;
+  color: var(--orange);
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.05;
+}
+
+.hero-copy p:not(.eyebrow) {
+  max-width: 440px;
+  margin-inline-start: auto;
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.primary-cta,
+.program-actions button,
+.booking-form button,
+.contact-form button {
+  border: 0;
+  border-radius: 16px;
+  background: #050505;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.primary-cta {
+  display: inline-flex;
+  margin-top: 22px;
+  padding: 13px 32px;
+}
+
+.primary-cta:hover,
+.program-actions button:hover,
+.booking-form button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.18);
+}
+
+.about-section,
+.reviews-section {
+  padding: 70px 0;
+}
+
+.section-heading {
+  margin-bottom: 38px;
+  text-align: right;
+}
+
+.section-heading h2 {
+  max-width: 720px;
+  margin-inline-start: auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  margin-bottom: 48px;
+}
+
+.about-grid article {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  gap: 14px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 2;
+}
+
+.about-grid span {
+  width: 12px;
+  height: 12px;
+  margin-top: 12px;
+  border-radius: 50%;
+  background: #050505;
+}
+
+.stats-grid,
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card,
+.review-card {
+  position: relative;
+  min-height: 190px;
+  padding: 26px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 14px 30px rgba(95, 75, 36, 0.1);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.stat-card:hover,
+.review-card:hover,
+.stop img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 44px rgba(95, 75, 36, 0.18);
+}
+
+.stat-card strong {
+  display: block;
+  color: var(--orange);
+  font-size: clamp(50px, 6vw, 78px);
+  line-height: 1;
+}
+
+.stat-card span {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.stat-card p {
+  margin-top: 14px;
+  color: var(--orange);
+  line-height: 1.7;
+}
+
+.program-section {
+  position: relative;
+  padding: 80px 0 0;
+}
+
+.route-line {
+  position: absolute;
+  inset: 220px auto 150px 45px;
+  width: min(86%, 1020px);
+  border: 10px dotted var(--green);
+  border-inline-end: 0;
+  border-radius: 140px 0 0 140px;
+  opacity: 0.95;
+  animation: routeWiggle 8s ease-in-out infinite;
+}
+
+.itinerary {
+  position: relative;
+  display: grid;
+  gap: 90px;
+}
+
+.stop {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: clamp(36px, 7vw, 100px);
+}
+
+.stop:nth-child(even) {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.stop:nth-child(even) img {
+  order: -1;
+}
+
+.stop-copy {
+  padding: 28px;
+}
+
+.stop-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: rgba(255, 245, 187, 0.82);
+  font-size: 34px;
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+.stop h3 {
+  margin: 0 0 18px;
+  color: var(--orange);
+  font-size: clamp(34px, 4vw, 52px);
+}
+
+.stop p {
+  color: #1b150c;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.stop img,
+.booking-image,
+.contact-section > img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 12px 18px rgba(67, 53, 30, 0.28);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.program-actions {
+  display: flex;
+  justify-content: center;
+  gap: min(16vw, 170px);
+  margin: 80px calc(50% - 50vw) 0;
+  padding: 68px 20px;
+  background: rgba(151, 139, 99, 0.36);
+}
+
+.program-actions button {
+  padding: 13px 32px;
+}
+
+.reviews-section {
+  text-align: center;
+}
+
+.reviews-section .section-heading,
+.reviews-section .section-heading h2 {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.review-card img {
+  width: 100%;
+  aspect-ratio: 1.05;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 12px 16px rgba(69, 53, 30, 0.22);
+}
+
+.review-card h3 {
+  margin: 18px 0 0;
+  color: var(--orange);
+  font-size: 22px;
+}
+
+.review-card p,
+.review-card strong,
+.review-card small {
+  display: block;
+}
+
+.review-card p {
+  color: var(--orange);
+}
+
+.review-card strong {
+  margin-top: 8px;
+  color: var(--orange);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.review-card span {
+  color: #f2b72e;
+}
+
+.review-card small {
+  color: #3b2e1b;
+  line-height: 1.6;
+}
+
+.booking-section,
+.contact-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  align-items: center;
+  gap: clamp(46px, 11vw, 160px);
+  padding: 80px 0;
+}
+
+.booking-image {
+  max-width: 390px;
+  justify-self: center;
+}
+
+.booking-form,
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.booking-form h2 {
+  color: var(--orange);
+  font-size: clamp(42px, 6vw, 76px);
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid var(--orange);
+  border-radius: 5px;
+  background: rgba(255, 247, 220, 0.65);
+  color: var(--ink);
+  font: inherit;
+  outline: none;
+  padding: 12px 14px;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 5px rgba(240, 87, 32, 0.14);
+  transform: translateY(-2px);
+}
+
+.booking-form button {
+  padding: 13px;
+  border-radius: 6px;
+  background: var(--orange);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding-top: 8px;
+}
+
+.socials a {
+  width: 78px;
+  padding: 4px 0;
+  border-radius: 3px;
+  background: var(--orange);
+  color: #050505;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+}
+
+.contact-section {
+  align-items: start;
+}
+
+.contact-section > img {
+  max-width: 320px;
+  justify-self: center;
+  border: 2px solid var(--orange);
+  box-shadow: none;
+}
+
+.contact-form div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.contact-form button {
+  width: max-content;
+  padding: 12px 28px;
+  border: 1px solid var(--orange);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 9px;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px) scale(0.98);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes floatHero {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(0.8deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes routeWiggle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    position: static;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px;
+  }
+
+  .site-header nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+  }
+
+  .hero-section,
+  .booking-section,
+  .contact-section,
+  .stop,
+  .stop:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    padding: 54px 0 70px;
+    text-align: center;
+  }
+
+  .hero-art {
+    order: 2;
+  }
+
+  .hero-copy,
+  .section-heading,
+  .section-heading h2 {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .hero-copy p:not(.eyebrow) {
+    margin-inline: auto;
+  }
+
+  .about-grid,
+  .stats-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stop:nth-child(even) img {
+    order: 0;
+  }
+
+  .route-line {
+    display: none;
+  }
+
+  .booking-section,
+  .contact-section {
+    padding: 54px 0;
+  }
+
+  .contact-form div {
+    grid-template-columns: 1fr;
+  }
+}
