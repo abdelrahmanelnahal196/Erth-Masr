@@ -1,1 +1,18 @@
-# Erth-Masr
+# Erth Masr
+
+Arabic tourism landing page for Erth Masr, built with React and Vite.
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+The site is configured for GitHub Pages through `.github/workflows/pages.yml`.
